@@ -27,6 +27,12 @@ const solutions = [
       'Real-time insights',
       'Better decision making',
     ],
+    pricing: {
+      starter: { tokens: 500, price: 300 },
+      professional: { tokens: 1000, price: 550 },
+      business: { tokens: 2000, price: 1000 },
+      enterprise: { tokens: 5000, price: 2300 },
+    },
   },
   {
     id: 2,
@@ -47,6 +53,12 @@ const solutions = [
       'Improve collaboration',
       'Reduce operating expenses',
     ],
+    pricing: {
+      starter: { tokens: 500, price: 350 },
+      professional: { tokens: 1000, price: 650 },
+      business: { tokens: 2000, price: 1200 },
+      enterprise: { tokens: 5000, price: 5000 },
+    },
   },
   {
     id: 3,
@@ -67,6 +79,12 @@ const solutions = [
       'Secure data handling',
       'Scalable infrastructure',
     ],
+    pricing: {
+      starter: { tokens: 500, price: 300 },
+      professional: { tokens: 1000, price: 550 },
+      business: { tokens: 2000, price: 1000 },
+      enterprise: { tokens: 5000, price: 2300 },
+    },
   },
   {
     id: 4,
@@ -87,6 +105,12 @@ const solutions = [
       'Better customer insights',
       'Streamlined workflows',
     ],
+    pricing: {
+      starter: { tokens: 500, price: 300 },
+      professional: { tokens: 1000, price: 550 },
+      business: { tokens: 2000, price: 1000 },
+      enterprise: { tokens: 5000, price: 5000 },
+    },
   },
   {
     id: 5,
@@ -107,6 +131,12 @@ const solutions = [
       'Optimize storage',
       'Lower carrying costs',
     ],
+    pricing: {
+      starter: { tokens: 500, price: 300 },
+      professional: { tokens: 1000, price: 550 },
+      business: { tokens: 2000, price: 1000 },
+      enterprise: { tokens: 5000, price: 4500 },
+    },
   },
   {
     id: 6,
@@ -127,6 +157,12 @@ const solutions = [
       'Reduce operational costs',
       'Better customer experience',
     ],
+    pricing: {
+      starter: { tokens: 500, price: 300 },
+      professional: { tokens: 1000, price: 550 },
+      business: { tokens: 2000, price: 1000 },
+      enterprise: { tokens: 5000, price: 2300 },
+    },
   },
 ]
 
@@ -150,10 +186,10 @@ export default function SolutionsPage() {
       <section className="py-32 bg-gradient-to-b from-primary/5 to-background pt-40">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-4xl md:text-5xl font-bold mb-6 text-balance">
-            Comprehensive Software Solutions
+            Choose Your Service & Get Started
           </h2>
           <p className="text-xl text-foreground/70 max-w-2xl mx-auto">
-            Detailed exploration of each solution we offer to transform your business operations
+            Select the solution that fits your needs and choose a plan to get started immediately
           </p>
         </div>
       </section>
@@ -221,9 +257,49 @@ export default function SolutionsPage() {
                       </div>
                     </div>
 
-                    <Button className="mt-8 bg-primary hover:bg-primary/90  w-full" style={{ color: 'white' }}>
-                      Request a Demo
-                    </Button>
+                    <div className="mt-8 space-y-6">
+                      <div className="border-t border-border pt-6">
+                        <h4 className="text-lg font-bold text-primary mb-4">Choose Your Plan</h4>
+                        <div className="grid grid-cols-2 gap-4">
+                          <Link
+                            href={`/checkout?service=${encodeURIComponent(solution.title)}&plan=starter&tokens=500&price=300`}
+                            className="p-4 border border-border rounded-lg hover:border-accent/50 hover:bg-accent/5 transition-all group"
+                          >
+                            <div className="text-sm text-foreground/60 mb-1">Starter</div>
+                            <div className="text-2xl font-bold text-foreground mb-1">₹300</div>
+                            <div className="text-xs text-foreground/50">500 tokens</div>
+                            <div className="mt-3 text-sm font-semibold text-accent group-hover:text-primary">Purchase →</div>
+                          </Link>
+                          <Link
+                            href={`/checkout?service=${encodeURIComponent(solution.title)}&plan=professional&tokens=1000&price=550`}
+                            className="p-4 border border-border rounded-lg hover:border-accent/50 hover:bg-accent/5 transition-all group"
+                          >
+                            <div className="text-sm text-foreground/60 mb-1">Professional</div>
+                            <div className="text-2xl font-bold text-foreground mb-1">₹550</div>
+                            <div className="text-xs text-foreground/50">1000 tokens</div>
+                            <div className="mt-3 text-sm font-semibold text-accent group-hover:text-primary">Purchase →</div>
+                          </Link>
+                          <Link
+                            href={`/checkout?service=${encodeURIComponent(solution.title)}&plan=business&tokens=2000&price=1000`}
+                            className="p-4 border border-border rounded-lg hover:border-accent/50 hover:bg-accent/5 transition-all group"
+                          >
+                            <div className="text-sm text-foreground/60 mb-1">Business</div>
+                            <div className="text-2xl font-bold text-foreground mb-1">₹1,000</div>
+                            <div className="text-xs text-foreground/50">2000 tokens</div>
+                            <div className="mt-3 text-sm font-semibold text-accent group-hover:text-primary">Purchase →</div>
+                          </Link>
+                          <Link
+                            href={`/checkout?service=${encodeURIComponent(solution.title)}&plan=enterprise&tokens=5000&price=${solution.id === 2 ? '5000' : solution.id === 4 ? '4500' : solution.id === 5 ? '5000' : '2300'}`}
+                            className="p-4 border border-border rounded-lg hover:border-accent/50 hover:bg-accent/5 transition-all group"
+                          >
+                            <div className="text-sm text-foreground/60 mb-1">Enterprise</div>
+                            <div className="text-2xl font-bold text-foreground mb-1">₹{solution.id === 2 ? '5,000' : solution.id === 4 ? '4,500' : solution.id === 5 ? '5,000' : '2,300'}</div>
+                            <div className="text-xs text-foreground/50">5000 tokens</div>
+                            <div className="mt-3 text-sm font-semibold text-accent group-hover:text-primary">Purchase →</div>
+                          </Link>
+                        </div>
+                      </div>
+                    </div>
                   </div>
                 )}
               </div>
@@ -236,14 +312,16 @@ export default function SolutionsPage() {
       <section className="py-24 bg-gradient-to-r from-primary/10 to-accent/10 border-t border-b border-primary/20">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-4xl font-bold mb-6 text-balance">
-            Need a Customized Solution?
+            Have Further Questions?
           </h2>
           <p className="text-lg text-foreground/70 mb-8 max-w-2xl mx-auto">
-            Every business is unique. Let's discuss how we can tailor our solutions to meet your specific needs.
+            Our team is here to help you choose the right solution and plan for your business needs.
           </p>
-          <Button size="lg" className="bg-primary hover:bg-primary/90  px-8" style={{ color: 'white' }}>
-            Contact Our Team
-          </Button>
+          <Link href="/contact">
+            <Button size="lg" className="bg-primary hover:bg-primary/90  px-8" style={{ color: 'white' }}>
+              Contact Us
+            </Button>
+          </Link>
         </div>
       </section>
 

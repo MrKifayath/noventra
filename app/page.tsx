@@ -16,60 +16,70 @@ const services = [
     title: 'Business Management Software',
     description: 'Custom solutions for managing daily operations, data, workflows, and automation.',
     Icon: BarChart3,
+    slug: 'business-management',
   },
   {
     id: 2,
     title: 'Enterprise Resource Planning',
     description: 'Integrated systems for managing operations, resources, and internal processes.',
     Icon: Settings,
+    slug: 'erp',
   },
   {
     id: 3,
     title: 'Web Application Systems',
     description: 'Secure and scalable web-based applications with admin panels and dashboards.',
     Icon: Globe,
+    slug: 'web-applications',
   },
   {
     id: 4,
     title: 'CRM & Customer Management',
     description: 'Manage customer records, communications, and relationship tracking efficiently.',
     Icon: Users,
+    slug: 'crm',
   },
   {
     id: 5,
     title: 'Inventory & Data Management',
     description: 'Structured data systems and automated reporting for operational efficiency.',
     Icon: Package,
+    slug: 'inventory',
   },
   {
     id: 6,
     title: 'E-commerce & Web Solutions',
     description: 'Professional websites, digital storefronts, and online presence platforms.',
     Icon: ShoppingCart,
+    slug: 'ecommerce',
   },
   {
     id: 7,
     title: 'Custom Application Development',
     description: 'Tailor-made software and system applications developed according to specific requirements.',
     Icon: Code2,
+    slug: 'custom-apps',
   },
   {
     id: 8,
     title: 'Digital Workflow & Automation Tools',
     description: 'Software tools that automate internal processes, documentation flow, and tracking.',
     Icon: Zap,
+    slug: 'workflow',
   },
   {
     id: 9,
     title: 'Cloud-Based Software Solutions',
     description: 'Secure cloud-hosted applications and software systems accessible remotely.',
     Icon: Cloud,
+    slug: 'cloud',
   },
   {
     id: 10,
     title: 'Software Maintenance & Support Services',
     description: 'Ongoing support, updates, and maintenance for software systems and applications.',
     Icon: Wrench,
+    slug: 'support',
   },
 ]
 
@@ -159,7 +169,7 @@ export default function Home() {
             {services.map((service, index) => (
               <Link
                 key={service.id}
-                href={`/services/${service.title.toLowerCase().replace(/[&\s]+/g, '-')}`}
+                href={`/services/${service.slug}`}
                 className="group relative bg-card border border-accent/10 rounded-2xl p-8 hover:border-accent/40 transition-all duration-500 hover:shadow-2xl hover:shadow-accent/20 hover:-translate-y-2 animate-in fade-in slide-in-from-bottom-8 duration-700 cursor-pointer"
                 style={{ animationDelay: `${index * 50}ms` }}
               >

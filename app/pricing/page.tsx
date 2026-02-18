@@ -145,15 +145,17 @@ export default function PricingPage() {
                     <span className="text-5xl font-bold text-primary">{plan.price}</span>
                   </div>
 
-                  <Button
-                    className={`w-full mb-8 py-6 ${
-                      plan.highlighted
-                        ? 'bg-primary hover:bg-primary/90 text-white'
-                        : 'border border-primary text-primary hover:bg-primary/10'
-                    }`}
-                  >
-                    Get Started
-                  </Button>
+                  <Link href="/solutions">
+                    <Button
+                      className={`w-full mb-8 py-6 ${
+                        plan.highlighted
+                          ? 'bg-primary hover:bg-primary/90 text-white'
+                          : 'border border-primary text-primary hover:bg-primary/10'
+                      }`}
+                    >
+                      Get Started
+                    </Button>
+                  </Link>
 
                   <ul className="space-y-4">
                     {plan.features.map((feature, idx) => (

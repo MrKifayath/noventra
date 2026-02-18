@@ -130,6 +130,21 @@ export default function TermsPage() {
             </section>
 
             <section className="space-y-4">
+              <h2 className="text-3xl font-bold">15. Cancellation & Refund Policies</h2>
+              <p className="text-foreground/80">
+                For detailed information about cancellations and refunds, please refer to our dedicated policy pages:
+              </p>
+              <div className="flex gap-4 mt-4">
+                <Link href="/cancellation" className="inline-flex px-6 py-3 bg-accent/10 border border-accent/30 rounded-lg hover:bg-accent/20 transition-colors">
+                  <span className="text-accent font-semibold">View Cancellation Policy →</span>
+                </Link>
+                <Link href="/refund" className="inline-flex px-6 py-3 bg-accent/10 border border-accent/30 rounded-lg hover:bg-accent/20 transition-colors">
+                  <span className="text-accent font-semibold">View Refund Policy →</span>
+                </Link>
+              </div>
+            </section>
+
+            <section className="space-y-4">
               <h2 className="text-3xl font-bold">Contact Information</h2>
               <p className="text-foreground/80">
                 For questions about these Terms & Conditions, please contact us:

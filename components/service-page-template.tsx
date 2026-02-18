@@ -37,7 +37,7 @@ export function ServicePageTemplate({
 
           <div className="flex flex-col sm:flex-row gap-4">
             <Link
-              href={`/contact?service=${serviceId}`}
+              href="/solutions"
               className="px-8 py-3 bg-primary rounded-lg font-semibold hover:bg-accent hover:text-accent-foreground hover:shadow-lg hover:shadow-accent/30 transition-all duration-300 inline-flex items-center gap-2 w-fit"
               style={{ color: 'white' }}
             >
@@ -96,17 +96,29 @@ export function ServicePageTemplate({
           <div className="space-y-4">
             <h2 className="text-4xl md:text-5xl font-bold">Ready to Get Started?</h2>
             <p className="text-xl text-foreground/70">
-              Let our experts help you implement the perfect solution for your business needs.
+              Choose your plan and start transforming your business today.
             </p>
           </div>
-          <Link
-            href={`/contact?service=${serviceId}`}
-            className="inline-flex px-8 py-4 bg-accent text-background rounded-lg font-semibold hover:shadow-lg hover:shadow-accent/30 transition-all duration-300 hover:scale-105"
-            style={{ color: 'white' }}
-          >
-            Schedule Your Free Consultation
-            <ArrowRight className="ml-2" size={20} />
-          </Link>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Link
+              href="/solutions"
+              className="inline-flex px-8 py-4 bg-primary text-background rounded-lg font-semibold hover:shadow-lg hover:shadow-primary/30 transition-all duration-300 hover:scale-105"
+              style={{ color: 'white' }}
+            >
+              View Plans & Pricing
+              <ArrowRight className="ml-2" size={20} />
+            </Link>
+            <Link
+              href="/contact"
+              className="inline-flex px-8 py-4 border-2 border-accent text-accent rounded-lg font-semibold hover:bg-accent hover:text-background transition-all duration-300 hover:scale-105"
+            >
+              Contact Us
+              <ArrowRight className="ml-2" size={20} />
+            </Link>
+          </div>
+          <p className="text-sm text-foreground/60">
+            Have questions? Our team is here to help you choose the right solution.
+          </p>
         </div>
       </section>
       <Footer />

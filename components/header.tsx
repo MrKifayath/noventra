@@ -106,7 +106,7 @@ export function Header() {
 
           {/* CTA Button */}
           <Link
-            href="/contact"
+            href="/solutions"
             className="ml-4 px-6 py-2.5 bg-primary font-semibold rounded-lg hover:bg-accent hover:text-accent-foreground hover:shadow-lg hover:shadow-accent/30 transition-all duration-300 transform hover:scale-105 inline-block"
             style={{ color: 'white' }}
           >
@@ -166,7 +166,7 @@ export function Header() {
 
             {/* CTA Button Mobile */}
             <Link
-              href="/contact"
+              href="/solutions"
               className="block px-4 py-3 mt-4 bg-primary rounded-lg font-semibold text-center hover:bg-accent hover:text-accent-foreground transition-colors"
               style={{ color: 'white' }}
               onClick={() => setMobileMenuOpen(false)}
